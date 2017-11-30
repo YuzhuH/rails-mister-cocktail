@@ -1,0 +1,7 @@
+<h1>Create a new Dose!</h1>
+
+<%=simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.input :ingredient, collection: @ingredients.pluck(:name) %>
+  <%= f.submit "submit!", class: "btn btn-primary" %>
+<% end %>
