@@ -6,6 +6,8 @@ class CocktailsController < ApplicationController
 
   def show
     @doses = Dose.where(cocktail_id: @cocktail.id)
+    @dose = Dose.new
+    @ingredients = Ingredient.all - @cocktail.ingredients
   end
 
   def new
