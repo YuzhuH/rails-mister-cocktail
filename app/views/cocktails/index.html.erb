@@ -12,7 +12,7 @@
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
 
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.drinkinginamerica.com/wp-content/uploads/2014/09/iStock-15535646_lemon-drop-cocktails_s4x3_lg-e1410362447677.jpg');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo if cocktail.photo? %>');">
         <div class="card-category">SOMETHING HERE </div>
         <div class="card-description">
           <h2><%= cocktail.name %></h2>
@@ -30,3 +30,12 @@
 </div>
 
 
+<!--
+image_tag "name of image" => <img src="name of image" alt="">
+
+image_path => "name_of_image"
+ -->
+<!-- cl_image_tag => <img src="https:/cloudinary/my_account/oajsdfoaisj.jpg" alt="">
+
+cl_image_path => https:/cloudinary/my_account/oajsdfoaisj.jpg
+ -->
